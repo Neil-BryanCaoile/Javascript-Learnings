@@ -82,3 +82,11 @@ if (restaurant.orderPizza) {
 }
 
 restaurant.orderPizza && restaurant.orderPizza("mushrooms", "spinach");
+
+// The OR ||
+//  - return the firts truthy value
+//  - or return the last truthy value if all of them are falsey
+
+// The END &&
+// -  will return the first falsey value
+// or the last value if all of them are Truthy
