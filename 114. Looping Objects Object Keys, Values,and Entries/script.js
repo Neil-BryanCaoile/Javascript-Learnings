@@ -50,15 +50,36 @@ const restaurant = {
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-// Object.keys() will returns an array of a
-// given object's own enumerable property names,
-// iterated in the same order that a normal loop would.
+// Loop Options
+//  -Object property names: use Object.keys()
+//  -Values
+//  -Both
 
-const properties = Object.keys(openingHours);
-console.log(properties);
+// Looping throught Property names
+console.log(`Looping through Property Name`);
+const properties = Object.keys(openingHours); // Object.keys() will returns an array of a given object's own enumerable property names, iterated in the same order that a normal loop would.
+
+console.log(`properties: ${properties}`);
 
 let openStr = `We are open on ${properties.length} days:`;
-for (const day of Object.keys(openingHours)) {
-  openStr += `${day},`;
+
+for (const day of properties) {
+  openStr += ` ${day},`;
 }
+
 console.log(openStr);
+
+// Property Values
+console.log(`Looping through property values`);
+const values = Object.values(openingHours); // Object.values()
+console.log(values);
+
+// Entire object
+console.log("Looping through entire object");
+const entries = Object.entries(openingHours);
+console.log(entries);
+
+// Destructure [{}]
+for (const [key, { open, close }] of entries) {
+  console.log(`On ${key} we open at ${open} and closed at  ${close}`);
+}
